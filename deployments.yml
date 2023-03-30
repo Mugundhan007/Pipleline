@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mugu
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: mugu
+  template:
+    metadata:
+      labels:
+        app: mugu
+    spec:
+      containers:
+      - name: mugu
+        image: mugu:123
+        ports:
+        - containerPort: 8081
